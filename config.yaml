@@ -1,0 +1,15 @@
+target_url: 'http://vote.demo.fastadmin.net/admin.php/index/login' # 登录目标网址
+browser_path: 'C:\Program Files\Google\Chrome\Application\chromedriver.exe' # 浏览器的路径
+headless: false # 设置false显式运行浏览器 true则反之
+captchaon: false # 是否开启验证码识别
+captcha_serverurl: 'http://127.0.0.1:8999/cb' # 图片验证码识别服务，使用captchabreak_serverurl文件夹中的脚本进行搭建
+userinput_xpath: '/html/body/div/div/div/div/div[2]/form/div[2]/input'  # 用户名输入框 xpath
+passinput_xpath: '/html/body/div/div/div/div/div[2]/form/div[3]/input'  # 密码输入框 xpath
+captchainput_xpath: '/html/body/div/div/div/div/div[2]/form/div[3]/input'  # 验证码输入框 xpath
+captchaimg_xpath: '/html/body/div/div/div/div/div[2]/form/div[3]/input' # 验证码图片 xpath
+loginbutton_xpath: '/html/body/div/div/div/div/div[2]/form/div[5]/button' # 登录按钮 xpath
+body_exclude_regex: # 排除请求的正则，即只要命中其中任意一个正则的请求响应将被抛弃,不能写没有的值 否则就会误报
+  - 'AdminLoginFormBegin'
+  - 'AdminLoginFormEnd'
+timeinterval_ms: 2000 # 浏览器中操作登录过程中每个操作之间的时间间隔(毫秒)
+proxy: '' # 代理
